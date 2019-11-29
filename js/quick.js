@@ -1,11 +1,23 @@
-export function quickTime(arr) {
-    const time = Date.now();
-    quickSort(arr);
-    console.log('quick ' + (Date.now() - time) / 1000 + ' sec');
+export function quickSort(arr) {
+    const support = arr[Math.floor(arr.length / 2)];
+    const left = [];
+    const right = [];
+    const center = [];
+
+    for (const el of arr) {
+        el < support ? left.push(el) :
+            el > support ? right.push(el) :
+                center.push(el)
+    }
+    let sortedLeft;
+    left.length > 1 ? sortedLeft = quickSort(left) : sortedLeft = [...left];
+    let sortedRight;
+    right.length > 1 ? sortedRight = quickSort(right) : sortedRight = [...right];
+    return [...sortedLeft, ...center, ...sortedRight];
 }
 
-function quickSort(arr) {
-    // console.log('arr', arr);
+export function quickSort2(arr) {
+
     const support = arr[0];
     const left = [];
     const right = [];
@@ -16,7 +28,7 @@ function quickSort(arr) {
             el > support ? right.push(el) :
                 center.push(el)
     }
-    // console.log('left', left, 'center', center, 'right', right);
+
     let sortedLeft;
     left.length > 1 ? sortedLeft = quickSort(left) : sortedLeft = [...left];
     let sortedRight;

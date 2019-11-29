@@ -6,3 +6,11 @@ export function arrGen(length) {
     }
     return arr
 }
+
+export function sortedArrGen(length) {
+    const arr = [];
+    for (let i = 0; i < length; i++) {
+        arr[i] = i
+    }
+    return arr
+}
