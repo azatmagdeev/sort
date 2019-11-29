@@ -2,7 +2,7 @@ import {arrGen, sortedArrGen} from "./arrGen.js";
 import {bubbleSort} from "./bubble.js";
 import {quickSort, quickSort2} from "./quick.js";
 import {heapSort} from "./heap.js";
-import {test} from "./__test__.js";
+// import {test} from "./__test__.js";
 
 const root = document.querySelector('#root');
 
