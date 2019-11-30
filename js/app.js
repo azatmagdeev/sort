@@ -6,14 +6,15 @@ import {heapSort} from "./heap.js";
 
 const root = document.querySelector('#root');
 
-document.querySelector('button')
+document.querySelector('#length')
     .addEventListener('click', e => {
+        console.log(e.target);
         root.innerHTML = '';
         e.preventDefault();
 
 
-        const arr = arrGen(document.querySelector('#length').value);
-        const sortedArr = sortedArrGen(document.querySelector('#length').value);
+        const arr = arrGen(e.target.id);
+        const sortedArr = sortedArrGen(e.target.id);
 
         const algorithms = [
             bubbleSort,
